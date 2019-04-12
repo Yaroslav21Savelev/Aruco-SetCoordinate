@@ -13,7 +13,9 @@ frame_size = [336, 256]
 cap = cv2.VideoCapture(0)
 
 session = conLib.client(addr, 4219)
-session.connect()
+while True:
+    if session.connect():
+        break
 print(addr)
 time.sleep(1)
 
